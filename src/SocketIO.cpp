@@ -3,6 +3,8 @@
 #include <errno.h>
 #include <sys/socket.h>
 
+namespace cf
+{
 ssize_t SocketIO::readn(char *buf, size_t count)
 {
     size_t nleft = count;  //剩余的字节数
@@ -107,4 +109,6 @@ ssize_t SocketIO::readline(char *usrbuf, size_t maxlen)
     }
     *bufp = 0;
     return maxlen - 1;
+}
+
 }
